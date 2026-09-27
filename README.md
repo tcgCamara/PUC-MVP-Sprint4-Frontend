@@ -10,7 +10,7 @@ A aplicação permite ao usuário criar e acessar uma conta, selecionar cartas d
 
 ## Arquitetura do sistema
 
-[INSERIR IMAGEM AQUI]
+<img width="1751" height="929" alt="PUCSprint4-Arquitetura png" src="https://github.com/user-attachments/assets/dfc7e75a-206a-422a-ad03-cf6c487cc149" />
 
 ## Tecnologias utilizadas
 
@@ -101,7 +101,7 @@ As imagens das cartas e do cabeçalho devem permanecer no diretório `img/`, poi
 O frontend depende de uma API executada localmente na porta `3000`. Disponibilizado em: 
 
 ```text
-INSERIR ENDEREÇO DA API BACKEND - SPRINT4
+https://github.com/tcgCamara/PUC-MVP-Sprint4-Backend
 ```
 
 Portanto, antes de utilizar todas as funcionalidades da aplicação, certifique-se de que o backend esteja instalado e em execução em:
