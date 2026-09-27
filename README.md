@@ -74,7 +74,7 @@ O frontend utiliza endpoints da API para realizar operações de usuários, cart
 Caso o projeto esteja hospedado em um repositório Git:
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/tcgCamara/PUC-MVP-Sprint4-Frontend
 ```
 
 Entre no diretório do projeto:
