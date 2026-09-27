@@ -1,0 +1,359 @@
+body{
+    background-color: #000000;
+    font-family: Tahoma;
+    box-sizing: border-box;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('img/header-img.png');
+    background-size: auto; 
+    background-position: center;
+    box-sizing: border-box;
+    /* border: 2px solid #d4af08; */
+    margin-top: 12px;
+    padding: 24px;
+    height: 256px;
+    width: auto;
+}
+
+h1, 
+h2, 
+h3 {
+    margin: 0px;
+    text-align: center;
+    color:#2d2d2d;
+}
+
+.titulo {
+    background-color: #d4af08;
+    color:#2d2d2d;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.container-superior {
+    display:flex;
+    gap: 12px;
+    justify-content: auto;
+    vertical-align: middle;
+    width: 80%;
+    margin: 0 auto;
+    padding: 32px;
+    /* border: 2px solid yellow; */
+}
+
+.login-topo {
+    display: flex;
+    gap: 6px;
+    justify-content: right;
+    text-align: right;
+    margin: 32px auto;
+    padding: 6px;
+    width: 80%;
+    border: 2px solid yellow;
+}
+
+#usuario-logado {
+    background-color: #d4af08;
+    color:#2d2d2d;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.area-login {
+    border: 2px solid yellow;
+    width: 30%;
+    padding: 12px;
+    justify-content: left;
+}
+
+#inputLogin,
+#inputUsuario,
+#inputCPF,
+#inputEmail {
+    width: 97%;
+}
+
+.topo-tabela {
+    text-align: center;
+    text-justify: auto;
+    font-size: 18px;
+    color: white;
+    padding: 32px;
+    margin: 0 auto;
+    width: 80%;
+    justify-content: center;
+    /* border: 2px solid yellow; */
+}
+
+.texto-select-cartas {
+    font-size: 32px;
+    color:#d4af08;
+    text-align: center;
+    font-weight: bolder;
+    
+}
+
+.texto-historia {
+    text-align: right;
+    text-justify: auto;
+    font-size: 22px;
+    font-style: italic;
+    color: white;
+    margin: 0 auto;
+    width: 70%;
+    justify-content: right;
+    /* border: 2px solid yellow; */
+}
+
+/* ---------------------------------------------- 
+Etapa de seleção de cartas 
+-----------------------------------------------*/
+
+.items {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/*--------------------------------------------------*/
+/* Container geral que alinha os botões e as cartas lado a lado */
+.carrossel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* max-width: 1200px; para ajustar as cartas no tamanho da tela */
+    margin: 0 auto;
+    gap: 15px;
+}
+
+/* Janela que esconde o que passa do limite visível */
+.carrossel-wrapper {
+    overflow: hidden;
+    width: 80%;
+}
+
+/* O CONTAINER rola suavemente através de transformações */
+.container-carta-select {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.7s ease-in-out;
+    padding: 10px 0;
+}
+
+/* Garante tamanho padrão para as imagens não quebrarem o layout */
+.carta-para-selecionar {
+    flex: 0 0 calc(33.33% - 14px); /* Mostra exatamente 3 cartas por vez com os 33.33% */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+/* ESTILO dos botões das setas */
+.btn-carrossel {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.btn-carrossel:hover {
+    background-color: #00bcd4; /* Cor combinando com estilo Solarpunk azul */
+}
+
+/*--------------------------------------------------*/
+
+/* .container-carta-select {
+    display:flex;
+    justify-content:center;
+    gap: 12px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 6px;
+} */
+
+.carta-selecionada {
+    opacity: 100% !important;
+    border: 2px solid #00bcd4;
+}
+
+.carta-para-selecionar {
+    /* scale: 0.8; */
+    width: 25%;
+    height: auto;
+    opacity: 50%;
+    border-radius: 2px;
+}
+.carta-para-selecionar:hover {
+    opacity: 100%;
+}
+
+.addSection {
+    text-align: center;
+    margin-top: 12px;
+}
+
+#inputCard {
+    border: none;
+    margin-bottom: 24px;
+    width: 40%;
+    padding: 10px;
+    font-size: 16px;
+}
+#inputQuantidadeDeCartas {
+    border: none;
+    margin-bottom: 24px;
+    width: 10%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.addButton {
+    margin-left: 6px;
+    background-color:#d1c280;
+    text-align: center middle;
+    color: #005550;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.addButton:hover {
+    background-color: #00bcd4;
+    border: 1px solid white
+}
+
+.dica-mouse {
+    transform: rotate(90 deg);
+}
+
+/* Terceira parte da página - Tabela de escolhas */
+
+.lista-itens {
+    /* border: 2px solid yellow; */
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    width: 80%;
+}
+
+table {
+    /* display: flex; */
+    border-collapse: collapse;
+    justify-content: center;
+    /* border: 2px dashed yellow; */
+    margin: 0 auto;
+    width: 80%;
+    padding: 12px;
+}
+
+th, 
+tr, 
+td {
+    position: relative;
+    cursor: pointer;
+    border: 2px dashed #d4af08;
+    padding: 12px 8px 12px 10px;
+
+}
+thead:nth-child(1){
+    background-color:#d4af08;
+    color:#2d2d2d;
+    font-weight: bold;
+}
+th:nth-child(1){
+    width: 500px;
+}
+td:nth-child(2){
+    text-align: center;
+}
+td:nth-child(3){
+    text-align: center;
+}
+tr:hover {
+    background-color: #00bcd4;
+}
+td:nth-child(3):hover{
+    background-color: #7d2626;
+}
+
+.excluir-linha:hover {
+    color: white;
+    font-weight: bold;
+}
+
+/*Ajustes da área de envio*/
+
+.area-envio {
+    width: 80%;
+    margin: 0 auto;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.campo-envio,
+.campo-cep {
+    margin-bottom: 20px;
+}
+
+.campo-envio label,
+.campo-cep label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.campo-envio input,
+.campo-cep input {
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+.campo-envio input {
+    width: 100%;
+}
+
+.campo-cep {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.campo-cep label {
+    width: 100%;
+}
+
+#inputCEPEnvio {
+    width: 30%;
+}
+
+.endereco-envio {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    gap: 12px;
+}
+
+.campo-rua {
+    grid-column: 1 / 5;
+}
+
+.solicitar-envio {
+    text-align: center;
+    margin-top: 24px;
+}

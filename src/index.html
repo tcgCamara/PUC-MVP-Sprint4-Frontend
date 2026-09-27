@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>PROXIER®</title>
+</head>
+
+<body>
+    <header class="header-superior">
+        <!-- <h1> <span class="titulo"> PROXIER </span> </h1>
+        <h3> <span class="titulo"> - Seja bem vindo a Exo-Tellus - </span> </h3> -->
+    </header>
+
+    <!-- LOGIN demonstrando o usuário logado -->
+
+    <div class="login-topo">
+        Usuário Logado:
+        <span id="usuario-logado"></span> 
+    </div>
+
+    <!-- INICIO da página com Login, cadastro de usuário e texto de apresentação -->
+
+    <div class="container-superior">
+        <div class="area-login">
+            <div class="titulo"> Faça seu login: </div><br>
+            <div>Usuário:</div>
+            <input type="text" id="inputLogin" placeholder="Digite seu nome">
+            <br><br>
+            <span class="addButton" onclick="logandoUsuario()">Login</span>
+            <br><br><br><br>
+
+            <div class="titulo"> Crie seu usuário: </div><br>
+            <div>Usuário:</div>
+            <input type="text" id="inputUsuario" placeholder="Digite seu nome">
+            <div>CPF:</div>
+            <input type="number" id="inputCPF" placeholder="Digite seu CPF apenas numeros">
+            <div>E-mail:</div>
+            <input type="text" id="inputEmail" placeholder="Digite seu e-mail">
+            <br><br>
+            <span class="addButton" onclick="validarCriarUsuario()">Criar Usuário</span>
+
+        </div>
+        <section class='texto-historia'> "Você faz parte de uma tripulação solar punk que escaparam da Terra, pois não havia condições de se viver. Hoje ela é chamada de 'Terra Antiga' pelos sobreviventes em Exo-Tellus, atual planeta em qual a humanidade habita, mas ainda existem alguns que a chamam de 'Terra Mãe' - talvez para quem ficou. <br><br> Em Exo-Tellus (Tellus de "Terra", em latim), o ar é rarefeito, mas respirável. Contém vegetações que reproduzem a fotossíntese. A terra é fértil e plantil. Holos, um dos o sois de Exo-Tellus, é o que brilha mais intensamente com seu tom azul, refletindo nas folhagens das matas e maioria de vegetações. Ele fica bem mais distante que o Sol ficava da Terra Antiga. Neste planeta não há água potável como no outro para abastecer toda a população que ali vive. Também não há diversidade mineral para explorar, mas contém o 'mitol', um minério que é capaz de construir estruturas para as habitação e naves espaciais que são utilizadas para a exploração dos recursos ainda necessários - principalmente a água. <br><br> Exo-Tellus ainda é um planeta hostil, mas bem menos do que a Terra Antiga." </section>
+    </div>
+    
+    <section class="topo-tabela"> PROXIER é um jogo de cartas no estilo Print and Play. Completamente democrático e distribuído para todo público, ele traz uma inovação na jogabilidade onde qualquer um pode começar a jogar imediatamente. </section>
+    
+    <!-- Área de seleção de cartas para impressão -->
+
+    <section class="titulo"> <h2>Selecione as cartas para adicionar ao seu carrinho!</h2> </section>
+    
+    <div class="carrossel-container">
+        <button class="btn-carrossel" onclick="moverCarrossel(-1)">&#10094;</button>
+        <div class="carrossel-wrapper">
+            <div class="container-carta-select">
+                <img class="carta-para-selecionar" dataid="1" src="img/carta-001.png" alt="Carta 1"></img>
+                <img class="carta-para-selecionar" dataid="2" src="img/carta-002.png" alt="Carta 2"></img>
+                <img class="carta-para-selecionar" dataid="3" src="img/carta-003.png" alt="Carta 3"></img>
+                <img class="carta-para-selecionar" dataid="4" src="img/carta-004.png" alt="Carta 4"></img>
+                <img class="carta-para-selecionar" dataid="5" src="img/carta-005.png" alt="Carta 5"></img>
+            </div>
+        </div>
+        <button class="btn-carrossel" onclick="moverCarrossel(1)">&#10095;</button>
+    </div>
+
+    <div class="addSection">
+        <span class="titulo dica-mouse" title="Outras cartas podem ser adicionadas como: 'Explosão de Metralha'; 'Engenheira de Sucatas'; e 'Vanguarda Veterana'."> &lt; ? &gt; </span>
+        <input type="text" id="inputCard" placeholder="Nome da carta">
+        <input type="text" id="inputQuantidadeDeCartas" placeholder="Quantidade">
+        <span class="addButton" onclick="adicionarCarta()">Adicionar</span>
+    </div>
+
+    <!-- Apresentação de lista para impressão das cartas selecionadas -->
+
+    <div class="titulo"> <h2>Sua lista de impressão:</h2></div>
+
+    <!-- Tabela com items existentes -->
+    <section class="lista-itens">
+        <table id="minha-tabela">
+            <thead>
+                <tr>
+                    <th>Carta</th>
+                    <th>Quantidade</th>
+                    <th>Remover</th>
+                </tr>    
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <!-- <span class="addButton"> Imprimir! </span> -->
+    </section>
+
+    <!-- Área de solicitação de envio -->
+
+    <div class="titulo">
+        <h2>Solicitação de envio</h2>
+    </div>
+
+    <section class="area-envio">
+
+        <div class="campo-envio">
+            <label for="inputUsuarioEnvio">Nome do destinatário:</label>
+            <input type="text" id="inputUsuarioEnvio" readonly>
+        </div>
+
+        <div class="campo-cep">
+            <label for="inputCEPEnvio">CEP:</label>
+            <input type="number" id="inputCEPEnvio" placeholder="Digite o CEP">
+            <span class="addButton" id="botaoPesquisarCEP" onclick="pesquisarCEP()">
+                Pesquisar CEP
+            </span>
+        </div>
+
+        <div class="endereco-envio">
+
+            <div class="campo-envio">
+                <label for="inputBairro">Bairro:</label>
+                <input type="text" id="inputBairro">
+            </div>
+
+            <div class="campo-envio">
+                <label for="inputCidade">Cidade:</label>
+                <input type="text" id="inputCidade">
+            </div>
+
+            <div class="campo-envio">
+                <label for="inputEstado">Estado:</label>
+                <input type="text" id="inputEstado" >
+            </div>
+
+            <div class="campo-envio">
+                <label for="inputUF">Estado - UF:</label>
+                <input type="text" id="inputUF">
+            </div>
+
+            <div class="campo-envio campo-rua">
+                <label for="inputRua">Rua:</label>
+                <input type="text" id="inputRua">
+            </div>
+
+        </div>
+
+        <div class="solicitar-envio">
+            <span class="addButton" id="botaoSolicitarEnvio" onclick="solicitarEnvio()">
+                Solicitar Envio
+            </span>
+        </div>
+
+    </section>
+    
+    <!-- FIM do código com a chamada do script -->
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <script src="script.js"></script>
+</body> 
+
+</html>
